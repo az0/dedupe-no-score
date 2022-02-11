@@ -8,6 +8,7 @@ Some code from https://github.com/dedupeio/dedupe-examples
 # Python built-in modules
 import csv
 import logging
+import os
 from timeit import default_timer as timer
 from datetime import timedelta
 
@@ -50,6 +51,7 @@ def write_linked(linked_records, output_file, in_file_1, in_file_2):
         header_unwritten = True
 
         for fileno, filename in enumerate((in_file_1, in_file_2)) :
+            filename = os.path.abspath(filename) # same in common.read_data()
             with open(filename, encoding='utf-8') as f_input :
                 reader = csv.reader(f_input)
 

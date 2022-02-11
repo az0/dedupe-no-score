@@ -48,7 +48,7 @@ def read_data(filename, max_rows = False):
     where the key is a unique record ID.
     """
 
-    filename = os.path.abspath(filename)
+    filename = os.path.abspath(filename) # same in write_linked.write_linked()
     print(f'read_data({filename}, {max_rows})')
 
     data_d = {}
