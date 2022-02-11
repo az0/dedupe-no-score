@@ -15,12 +15,13 @@
 * common.py: shared code
 * record_linkage.py: use pre-trained model to link records
 * train_from_csv.py: script to train model and save it
+* train_and_link_in_one_session.py: train and link in one session with no deserialization
 
 ## Instructions
 
-First, run `train_from_csv.py`.
+First, run `train_from_csv.py`. Then, run `record_linkage.py`.
 
-Then, run `record_linkage.py`.
+Alternatively, run `train_and_link_in_one_session.py`.
 
 
 ## Cross reference

@@ -77,11 +77,12 @@ def write_linked(linked_records, output_file, in_file_1, in_file_2):
                     writer.writerow(row)
 
 
-def go():
-    import dedupe
-    logger.info(f'reading from {common.learned_settings_fn}')
-    with open(common.learned_settings_fn, 'rb') as sf :
-        linker = dedupe.StaticRecordLink(sf)
+def go(linker = None):
+    if not linker:
+        import dedupe
+        logger.info(f'reading from {common.learned_settings_fn}')
+        with open(common.learned_settings_fn, 'rb') as sf :
+            linker = dedupe.StaticRecordLink(sf)
 
     data_1 = common.read_data(data_1_fn)
     data_2 = common.read_data(data_2_fn)

@@ -113,6 +113,8 @@ def go():
     logger.warning('write_settings()')
     with open(common.learned_settings_fn, 'wb') as sf:
         linker.write_settings(sf)
+        
+    return linker
 
 
 if __name__ == "__main__":
